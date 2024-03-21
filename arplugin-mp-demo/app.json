@@ -1,0 +1,18 @@
+{
+	"componentFramework": "glass-easel",
+	"lazyCodeLoading": "requiredComponents",
+	"pages": ["pages/index/index"],
+	"plugins": {
+		"webarPlugin": {
+			"provider": "wx04445cff065100ed",
+			"version": "1.0.1"
+		}
+	},
+	"sitemapLocation": "sitemap.json",
+	"style": "v2",
+	"window": {
+		"navigationBarBackgroundColor": "#ffffff",
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "Weixin"
+	}
+}

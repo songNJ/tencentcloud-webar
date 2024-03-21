@@ -1,0 +1,21 @@
+{
+  "globalStyle": {
+    "backgroundColor": "#F8F8F8",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app"
+  },
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "mp-weixin": {
+          "usingComponents": {
+            "webar-camera": "plugin://webarPlugin/webar-camera"
+          }
+        },
+        "navigationBarTitleText": "arplugin-uni-app-demo"
+      }
+    }
+  ]
+}

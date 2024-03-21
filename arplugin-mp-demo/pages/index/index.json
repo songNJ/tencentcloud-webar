@@ -1,0 +1,5 @@
+{
+	"usingComponents": {
+		"webar-camera": "plugin://webarPlugin/webar-camera"
+	}
+}
