@@ -1,0 +1,16 @@
+<view>
+	<view class="btn_box">
+		<button bindtap="toggleBackground">虚拟背景: {{ backgroundUrl ?  '开': '关' }}</button>
+	</view>
+	<!--native模式，仅支持虚拟背景-->
+	<webar-live-pusher
+		custom-effect
+		url="{{ push_url }}"
+		autopush="{{ true }}"
+		licenseKey="{{ licenseKey }}"
+		appId="{{ appId }}"
+		authFunc="{{ authFunc }}"
+		background="{{ backgroundUrl }}"
+		bind:created="onArCreated"
+		style="width: 100vw; height: 100vh" />
+</view>

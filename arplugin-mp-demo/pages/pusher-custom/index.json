@@ -1,0 +1,6 @@
+{
+	"usingComponents": {
+		"webar-live-pusher": "tencentcloud-webar-wx/webar-live-pusher"
+	},
+	"navigationStyle": "custom"
+}

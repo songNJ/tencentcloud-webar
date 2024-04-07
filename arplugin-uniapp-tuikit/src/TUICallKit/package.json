@@ -1,0 +1,39 @@
+{
+  "name": "@tencentcloud/call-uikit-wechat",
+  "version": "3.2.1",
+  "main": "./tuicall-uikit-vue.umd.js",
+  "module": "./tuicall-uikit-vue.es.js",
+  "types": "./types/index.d.ts",
+  "description": "An Open-source Voice & Video Calling UI Component Based on Tencent Cloud Service.",
+  "homepage": "https://cloud.tencent.com/document/product/647/78912",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tencentyun/TUICallKit/tree/main/uni-app/TUICallKit-Miniprogram",
+    "directory": "Web"
+  },
+  "dependencies": {
+    "@tencentcloud/tui-core": "latest",
+    "tuicall-engine-wx": "latest"
+},
+  "bugs": {
+    "url": "https://github.com/tencentyun/TUICallKit/issues"
+  },
+  "keywords": [
+    "uikit",
+    "call",
+    "vue3",
+    "tencent",
+    "chat",
+    "vue",
+    "vue2",
+    "video",
+    "audio",
+    "voice",
+    "callkit",
+    "语音",
+    "视频",
+    "电话",
+    "通话"
+  ]
+}

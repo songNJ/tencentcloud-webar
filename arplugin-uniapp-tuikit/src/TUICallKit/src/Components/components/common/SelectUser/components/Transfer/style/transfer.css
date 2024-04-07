@@ -1,0 +1,17 @@
+@import "./color.css";
+@import "./web.css";
+@import "./h5.css";
+
+ul,ol,li {
+  margin:0;
+  padding:0;
+}
+
+.icon-unselected {
+  width: 18px;
+  height: 18px;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 11px;
+  box-sizing: border-box;
+}

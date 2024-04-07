@@ -9,12 +9,43 @@
     {
       "path": "pages/index/index",
       "style": {
+        "navigationBarTitleText": "uniapp-demo"
+      }
+    },
+    {
+      "path": "pages/pusher-custom/index",
+      "style": {
+        "mp-weixin": {
+          "usingComponents": {
+            "webar-live-pusher": "plugin://webarPlugin/webar-live-pusher"
+          },
+          "navigationStyle": "custom"
+        },
+        "navigationBarTitleText": "uniapp-demo"
+      }
+    },
+    {
+      "path": "pages/pusher-native/index",
+      "style": {
+        "mp-weixin": {
+          "usingComponents": {
+            "webar-live-pusher": "plugin://webarPlugin/webar-live-pusher"
+          },
+          "navigationStyle": "custom"
+        },
+        "navigationBarTitleText": "uniapp-demo"
+      }
+    },
+    {
+      "path": "pages/camera/index",
+      "style": {
         "mp-weixin": {
           "usingComponents": {
             "webar-camera": "plugin://webarPlugin/webar-camera"
-          }
+          },
+          "navigationStyle": "custom"
         },
-        "navigationBarTitleText": "arplugin-uni-app-demo"
+        "navigationBarTitleText": "uniapp-demo"
       }
     }
   ]

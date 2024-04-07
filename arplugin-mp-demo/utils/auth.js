@@ -1,24 +1,24 @@
-// 鉴权参考：https://cloud.tencent.com/document/product/616/71364
+const LICENSE_KEY = '48bd7bd4c8e221eb150fd1bf7d5a0ea4';
+const APP_ID = '1309122168';
 
-const LICENSE_KEY = '<your license key>';
-const APP_ID = '<your app id>';
-// token放在前端有泄漏风险，建议按照文档说明，将签名服务放到后端
-const TOKEN = '<your token>';
-
-const crypto = require('crypto-js');
-
-const sha256 = (str) => {
-	return crypto.SHA256(str).toString();
-};
-
-const genSignature = function () {
-	const timestamp = Math.round(new Date().getTime() / 1000);
-	const signature = sha256(timestamp + TOKEN + APP_ID + timestamp).toUpperCase(); // 使用上面获取到的token和appid合成加密串返回
-	return { signature, timestamp };
-};
+function getSignature() {
+	return new Promise((resolve, reject) => {
+		wx.request({
+			url: 'https://service-8wkf8fy8-1258344699.gz.apigw.tencentcs.com/release/get-ar-sign',
+			method: 'GET',
+			success(res) {
+				console.log('getSignature ok', res);
+				resolve(res.data);
+			},
+			fail(e) {
+				console.log('getSignature error', e);
+			},
+		});
+	});
+}
 
 async function authFunc() {
-	const { signature, timestamp } = genSignature();
+	const { signature, timestamp } = await getSignature();
 	return {
 		signature,
 		timestamp,

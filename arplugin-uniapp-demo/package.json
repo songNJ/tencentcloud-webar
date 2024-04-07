@@ -69,7 +69,9 @@
     "@dcloudio/uni-stat": "^2.0.2-3090920231225001",
     "@vue/shared": "^3.0.0",
     "core-js": "^3.8.3",
+    "crypto-js": "^4.2.0",
     "flyio": "^0.6.2",
+    "tencentcloud-webar-wx": "^1.0.1",
     "vue": ">= 2.6.14 < 2.7",
     "vuex": "^3.2.0"
   },

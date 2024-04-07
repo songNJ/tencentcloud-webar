@@ -1,0 +1,12 @@
+.btn_box {
+	position: fixed;
+	display: flex;
+	width: 100vw;
+	bottom: 5%;
+	justify-content: space-around;
+	z-index: 9999;
+}
+
+.btn_box button {
+	font-size: 30rpx;
+}

@@ -1,0 +1,64 @@
+//桌面端
+.control-wrapper-desktop {
+  transform: translate(-50%);
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 40px;
+  left: 50%;
+  width: 100%;
+  color: white;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  user-select: none;
+
+  .panel-button-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 30px 0;
+    min-width: 40%;
+
+    .btn {
+      margin: 0 35px;
+    }
+
+    .btn-operate-desktop {
+      .call-operate {
+        display: flex;
+        flex-direction: column;
+        width: 40px;
+        height: 40px;
+        margin: 0 40px;
+        cursor: pointer;
+      }
+    
+      img {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+    
+      span {
+        display: block;
+        margin-top: 5px;
+        white-space: nowrap;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -62,7 +62,8 @@
       }
     },
     "setting": {
-      "urlCheck": false
+      "urlCheck": false,
+      "es6": true
     },
     "usingComponents": true
   },

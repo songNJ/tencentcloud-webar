@@ -1,0 +1,63 @@
+.btn-operate-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .call-operate {
+    width: 50px;
+    height: 50px;
+    border-radius: 8vh;
+    margin: 0 5vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .invite-calling-item-loading {
+      width: 40px;
+      height: 40px;
+      animation: rotation 2s linear infinite;
+    }
+
+    @keyframes rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .invite-calling-item-loading img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .operate-img {
+      width: 100%;
+      height: 100%;
+      background: none;
+
+      .hangup-img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .switchAudioCall {
+      width: 6vw;
+      height: 3vh;
+    }
+  }
+
+  .call-switch .call-operate {
+    width: 4vh;
+    height: 3vh;
+  }
+
+  .operate-text {
+    margin: 6px 0px 6px 0px;
+  }
+}
+

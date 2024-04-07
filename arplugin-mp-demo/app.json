@@ -1,7 +1,12 @@
 {
 	"componentFramework": "glass-easel",
 	"lazyCodeLoading": "requiredComponents",
-	"pages": ["pages/index/index"],
+	"pages": [
+		"pages/index/index",
+		"pages/pusher-native/index",
+		"pages/pusher-custom/index",
+		"pages/camera/index"
+	],
 	"plugins": {
 		"webarPlugin": {
 			"provider": "wx04445cff065100ed",

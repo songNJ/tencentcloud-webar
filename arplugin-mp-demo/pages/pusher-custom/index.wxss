@@ -1,0 +1,15 @@
+.btn_box {
+	position: fixed;
+	display: flex;
+	width: 100vw;
+	bottom: 5%;
+	justify-content: space-between;
+	z-index: 9999;
+}
+
+.btn_box button {
+	font-size: 30rpx;
+	writing-mode: vertical-rl;
+	margin-left: 15px;
+	margin-right: 15px;
+}
