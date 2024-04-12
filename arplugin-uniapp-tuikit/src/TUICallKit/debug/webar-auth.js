@@ -27,8 +27,4 @@ async function authFunc() {
   };
 }
 
-export default {
-  LICENSE_KEY,
-  APP_ID,
-  authFunc,
-};
+export { LICENSE_KEY, APP_ID, authFunc };

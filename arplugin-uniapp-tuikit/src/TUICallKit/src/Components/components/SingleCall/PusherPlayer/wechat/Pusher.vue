@@ -1,7 +1,7 @@
 <template>
   <div :class="localClass">
     <div @click="switchScreen" class="stream-box">
-      <WebarPusher
+      <WebArPusher
         class="stream"
         :custom-effect="true"
         :url="pusher.url"
@@ -40,7 +40,7 @@
         @netstatus="pusherNetStatus"
         @error="pusherErrorHandler"
         @audiovolumenotify="pusherAudioVolumeNotify"
-      ></WebarPusher>
+      ></WebArPusher>
     </div>
   </div>
 </template>
@@ -60,7 +60,7 @@ import {
   authFunc as auth,
 } from "../../../../../../debug/webar-auth";
 import { onMounted, ref, onUnmounted } from "../../../../../adapter-vue";
-import WebarPusher from "tencentcloud-webar-wx/WebArPusher/WebArPusher.vue";
+import WebArPusher from "tencentcloud-webar-wx/WebArPusher/WebArPusher.vue";
 
 const pusher = ref(TUIStore.getData(StoreName.CALL, NAME.PUSHER));
 const callStatus = ref(TUIStore.getData(StoreName.CALL, NAME.CALL_STATUS));

@@ -38,7 +38,7 @@
             v-if="item.isEnter"
           >
             <div class="pusher-box" v-if="item.userId === localUserInfo.userId">
-              <WebarPusher
+              <WebArPusher
                 class="stream"
                 :custom-effect="true"
                 :url="pusher.url"
@@ -77,7 +77,7 @@
                 @netstatus="pusherNetStatus"
                 @error="pusherErrorHandler"
                 @audiovolumenotify="pusherAudioVolumeNotify"
-              ></WebarPusher>
+              ></WebArPusher>
               <div
                 v-if="callType !== CallMediaType.AUDIO"
                 class="invite-calling-item-id"
@@ -148,6 +148,7 @@ import {
 } from "../../../../../adapter-vue";
 import SwiperWeChat from "../../../common/SwiperWx/Swiper.vue";
 import SwiperSlider from "../../../common/SwiperWx/SwiperSlider.vue";
+import WebArPusher from "tencentcloud-webar-wx/WebArPusher/WebArPusher.vue";
 import {
   TUICallKitServer,
   StoreName,
