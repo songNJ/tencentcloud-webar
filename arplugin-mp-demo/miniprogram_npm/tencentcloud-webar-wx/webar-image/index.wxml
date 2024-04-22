@@ -1,0 +1,9 @@
+<view class="camera-box class" style="{{style}}">
+  <canvas
+    style="{{customStyle}}"
+    class="canvas"
+    canvas-id="main-canvas"
+    id="main-canvas"
+    type="webgl"
+  ></canvas>
+</view>

@@ -1,0 +1,6 @@
+{
+	"navigationStyle": "custom",
+	"usingComponents": {
+		"webar-image": "tencentcloud-webar-wx/webar-image"
+	}
+}

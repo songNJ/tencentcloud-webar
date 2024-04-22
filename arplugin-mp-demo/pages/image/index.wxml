@@ -1,0 +1,16 @@
+<view>
+	<view class="btn_box">
+		<button bindtap="toggleBeautify">美颜: {{ beautifyEnable ? '开' : '关' }}</button>
+		<button bindtap="toggleFilter">滤镜: {{ filterEnable ? '开' : '关' }}</button>
+		<button bindtap="toggleMakeup">美妆: {{ makeupEnable ? '开' : '关' }}</button>
+		<button bindtap="toggleSticker">贴纸: {{ stickerEnable ? '开' : '关' }}</button>
+	</view>
+
+	<webar-image
+		licenseKey="{{ licenseKey }}"
+		appId="{{ appId }}"
+		authFunc="{{ authFunc }}"
+        url="https://webar-static.tencent-cloud.com/assets/image2.jpg"
+		bind:created="onArCreated"
+		style="width: 100vw; height: 100vh" />
+</view>

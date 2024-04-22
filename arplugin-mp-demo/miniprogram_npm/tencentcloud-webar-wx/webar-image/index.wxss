@@ -1,0 +1,15 @@
+.camera-box {
+  position: relative;
+  overflow: hidden;
+}
+.camera {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: -9999px;
+}
+.canvas {
+  width: 100%;
+  height: 100%;
+}

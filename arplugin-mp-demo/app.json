@@ -3,6 +3,7 @@
 	"lazyCodeLoading": "requiredComponents",
 	"pages": [
 		"pages/index/index",
+		"pages/image/index",
 		"pages/pusher-native/index",
 		"pages/pusher-custom/index",
 		"pages/camera/index"
@@ -10,7 +11,7 @@
 	"plugins": {
 		"webarPlugin": {
 			"provider": "wx04445cff065100ed",
-			"version": "1.0.1"
+			"version": "1.0.4"
 		}
 	},
 	"sitemapLocation": "sitemap.json",
