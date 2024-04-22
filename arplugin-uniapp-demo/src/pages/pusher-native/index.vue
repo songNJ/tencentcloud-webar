@@ -13,7 +13,7 @@
       :authFunc="authFunc"
       :plugin3d="plugin3d"
       @created="onArCreated"
-      style="width: 100vw; height: 100vh"
+      my-style="width: 100vw; height: 100vh"
       class="webar"
     />
   </view>

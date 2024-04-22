@@ -16,7 +16,7 @@
       :authFunc="authFunc"
       :plugin3d="plugin3d"
       @created="onArCreated"
-      style="width: 100vw; height: 100vh"
+      my-style="width: 100vw; height: 100vh"
       class="webar"
     />
   </view>
@@ -52,8 +52,8 @@ export default {
     beautifyEnable: function (val) {
       if (val) {
         this.sdk.setBeautify({
-          whiten: 1,
-          dermabrasion: 1,
+          whiten: 0.3,
+          dermabrasion: 0.7,
           eye: 1,
         });
       } else {

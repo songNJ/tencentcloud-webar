@@ -33,11 +33,58 @@ npm install tencentcloud-webar-wx
 
 3. 打开微信开发者工具，工具=> 执行构建 npm
 
-### 使用 webar-camera 组件接入美颜
+### 使用 webar-image 组件接入图片美颜特效
+
+webar-image 基于 webgl 相关能力，提供图片和相册美颜特效处理能力，支持导出和预览。
+
+1. 在 page 的`.json`文件中定义需要引入的`webar-image`组件。
+
+```json
+{
+  "usingComponents": {
+    "webar-image": "tencentcloud-webar-wx/webar-image"
+  }
+}
+```
+
+2. 在 page 的`.wxml`文件中使用组件。
+
+```html
+<webar-image
+  licenseKey="{{licenseKey}}"
+  appId="{{appId}}"
+  authFunc="{{authFunc}}"
+  plugin3d="{{plugin3d}}"
+  url="https://webar-static.tencent-cloud.com/assets/image2.jpg"
+  bind:created="onArCreated"
+  style="width: 100vw; height: 100vh"
+/>
+```
+
+3. 在 page 的`.js`文件中使用 webarContext 设置美颜特效。
+
+webar-image 会通过 created 事件返回 [WebarContext](#method)
+
+```js
+onArCreated(event) {
+  const webarContext = event.detail
+  // 设置美颜
+  webarContext.setBeautify({
+    whiten: 0.5,
+    dermabrasion: 0.6
+  });
+  // 设置滤镜
+  webarContext.setFilter(id, 1);
+  // 设置美妆、特效、贴纸
+  webarContext.setEffect([{ id, intensity:1 }]);
+},
+```
+
+### 使用 webar-camera 组件接入拍照录像美颜
 
 webar-camera 组件使用微信组件 [camera](https://developers.weixin.qq.com/miniprogram/dev/component/camera.html) 进行封装，适用于拍摄录像场景下的美颜特效处理。
 
-1. 在 page 的`.json`文件中定义需要引入的`webar-camera`组件，使用`plugin://`协议。
+1. 在 page 的`.json`文件中定义需要引入的`webar-camera`组件。
 
 ```json
 {
@@ -81,7 +128,7 @@ onArCreated(event) {
 },
 ```
 
-### 使用 webar-live-pusher 组件
+### 使用 webar-live-pusher 组件接入直播推流美颜特效
 
 webar-live-pusher 组件使用微信组件 [live-pusher](https://developers.weixin.qq.com/miniprogram/dev/component/live-pusher.html) 进行封装，适用于直播推流场景下的美颜特效处理。
 
@@ -191,7 +238,56 @@ async onArCreated(event) {
 npm install tencentcloud-webar-wx
 ```
 
-### 使用 WebArCamera 组件接入美颜
+### 使用 WebArImage 组件接入图片美颜特效
+
+WebArImage 基于 webgl 相关能力，提供图片和相册美颜特效处理能力，支持导出和预览。
+
+1. 在引入组件的页面 的`.vue`文件中使用组件。
+
+WebArImage 会通过 created 事件返回 [WebarContext](#method)
+
+```html
+<template>
+  <view>
+    <WebArImage
+      :licenseKey="licenseKey"
+      :appId="appId"
+      :authFunc="authFunc"
+      :plugin3d="plugin3d"
+      url="https://webar-static.tencent-cloud.com/assets/image2.jpg"
+      @created="onArCreated"
+      my-style="width: 100vw; height: 100vh"
+    />
+  </view>
+</template>
+
+<script>
+  import WebArImage from "tencentcloud-webar-wx/WebArImage/WebArImage.vue";
+
+  export default {
+    components: {
+      WebArImage,
+    },
+    methods: {
+      // 此事件会返回 webarContext 实例，通过该实例调用 webar sdk的美颜方法。方法介绍参考文末。
+      onArCreated(sdk) {
+        webarContext = sdk.detail || sdk; // uniapp 下事件有可能有detail也有可能没有
+        // 设置美颜
+        webarContext.setBeautify({
+          whiten: 0.5,
+          dermabrasion: 0.6,
+        });
+        // 设置滤镜
+        webarContext.setFilter(id, 1);
+        // 设置美妆、特效、贴纸
+        webarContext.setEffect([{ id, intensity: 1 }]);
+      },
+    },
+  };
+</script>
+```
+
+### 使用 WebArCamera 组件接入拍照录像美颜
 
 WebArCamera 组件使用微信组件 [camera](https://developers.weixin.qq.com/miniprogram/dev/component/camera.html) 进行封装，适用于拍摄录像场景下的美颜特效处理，美颜特效相关参数请参考[插件相关组件美颜特效属性说明](#propsdesc)。
 
@@ -208,7 +304,7 @@ WebArCamera 会通过 created 事件返回 [WebarContext](#method)
       :authFunc="authFunc"
       :plugin3d="plugin3d"
       @created="onArCreated"
-      style="width: 100vw; height: 100vh"
+      my-style="width: 100vw; height: 100vh"
     />
   </view>
 </template>
@@ -239,7 +335,7 @@ WebArCamera 会通过 created 事件返回 [WebarContext](#method)
 </script>
 ```
 
-### 使用 WebArPusher 组件接入美颜
+### 使用 WebArPusher 组件接入直播推流美颜特效
 
 #### 设置美颜、滤镜、美妆、贴纸
 
@@ -259,7 +355,7 @@ WebArPusher 会通过 created 事件返回 [WebarContext](#method)
       :authFunc="authFunc"
       :plugin3d="plugin3d"
       @created="onArCreated"
-      style="width: 100vw; height: 100vh"
+      my-style="width: 100vw; height: 100vh"
     />
   </view>
 </template>
@@ -304,7 +400,7 @@ WebArPusher 会通过 created 事件返回 [WebarContext](#method)
       :plugin3d="plugin3d"
       :background="backgroundUrl"
       @created="onArCreated"
-      style="width: 100vw; height: 100vh"
+      my-style="width: 100vw; height: 100vh"
     />
   </view>
 </template>

@@ -9,7 +9,13 @@
     {
       "path": "pages/index/index",
       "style": {
-        "navigationBarTitleText": "uniapp-demo"
+        "navigationBarTitleText": "webar-uniapp-demo"
+      }
+    },
+    {
+      "path": "pages/image/index",
+      "style": {
+        "navigationBarTitleText": "图片美颜特效"
       }
     },
     {
@@ -18,7 +24,7 @@
         "mp-weixin": {
           "navigationStyle": "custom"
         },
-        "navigationBarTitleText": "uniapp-demo"
+        "navigationBarTitleText": "拍照录像美颜特效"
       }
     },
     {
@@ -27,7 +33,7 @@
         "mp-weixin": {
           "navigationStyle": "custom"
         },
-        "navigationBarTitleText": "uniapp-demo"
+        "navigationBarTitleText": "直播美颜特效"
       }
     },
     {
@@ -36,7 +42,7 @@
         "mp-weixin": {
           "navigationStyle": "custom"
         },
-        "navigationBarTitleText": "uniapp-demo"
+        "navigationBarTitleText": "直播虚拟背景"
       }
     }
   ]

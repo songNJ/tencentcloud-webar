@@ -10819,10 +10819,9 @@
     "source-map-support" "^0.5.3"
     "which" "^2.0.2"
 
-"tencentcloud-webar-wx@^1.0.1":
-  "integrity" "sha512-nJZYwnHH0OsnjIA33zXm89gpHdZt6VuF7TOKwybS3YdWweaGyzyb4fi+9CimAVJikYETsLS09qQlyRyFveU9oQ=="
-  "resolved" "https://registry.npmjs.org/tencentcloud-webar-wx/-/tencentcloud-webar-wx-1.0.1.tgz"
-  "version" "1.0.1"
+"tencentcloud-webar-wx@file:../../tencentcloud-webar-wx":
+  "resolved" "file:../../tencentcloud-webar-wx"
+  "version" "1.0.2"
 
 "terminal-link@^2.0.0":
   "integrity" "sha512-un0FmiRUQNr5PJqy9kP7c40F5BOfpGlYTrxonDChEZB7pzZxRNp/bt+ymiy9/npwXya9KH99nJ/GXFIiUkYGFQ=="

@@ -10,27 +10,26 @@
         贴纸：{{ stickerEnable ? '开' : '关' }}
       </button>
     </view>
-    <WebArPusher
-      enableVideoCustomRender
-      autopush
-      :url="push_url"
+    <WebArImage
       :licenseKey="licenseKey"
       :appId="appId"
       :authFunc="authFunc"
       :plugin3d="plugin3d"
       @created="onArCreated"
+      url="https://webar-static.tencent-cloud.com/assets/image2.jpg"
       my-style="width: 100vw; height: 100vh"
+      class="webar"
     />
   </view>
 </template>
 
 <script>
-import WebArPusher from 'tencentcloud-webar-wx/WebArPusher/WebArPusher.vue';
+import WebArImage from 'tencentcloud-webar-wx/WebArImage/WebArImage.vue';
 import { authFunc, APP_ID, LICENSE_KEY } from '../../utils/auth';
 import { plugin3d } from '../../utils/plugin-3d';
 export default {
   components: {
-    WebArPusher,
+    WebArImage,
   },
   data() {
     return {
@@ -38,7 +37,6 @@ export default {
       licenseKey: LICENSE_KEY,
       appId: APP_ID,
       authFunc,
-      push_url: '',
       beautifyEnable: false,
       filterEnable: false,
       makeupEnable: false,
@@ -87,6 +85,7 @@ export default {
         });
       }
       this.sdk.setEffect(this.effectState, 1);
+      console.log(this.effectState);
     },
     stickerEnable(val) {
       if (val) {
@@ -99,6 +98,7 @@ export default {
           return item.id !== 'BF3C417FD91CACC0' /* 悟空特效 */;
         });
       }
+      console.log(this.effectState);
       this.sdk.setEffect(this.effectState, 1);
     },
   },
