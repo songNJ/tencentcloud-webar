@@ -127,6 +127,7 @@ onArCreated(event) {
   webarContext.setFilter(id, 1);
   // 设置美妆、特效、贴纸
   webarContext.setEffect([{ id, intensity:1 }]);
+  webarContext.download(true) // 保存图片，参数为是否存储到相册
 },
 ```
 
@@ -283,6 +284,7 @@ WebArImage 会通过 created 事件返回 [WebarContext](#method)
         webarContext.setFilter(id, 1);
         // 设置美妆、特效、贴纸
         webarContext.setEffect([{ id, intensity: 1 }]);
+        webarContext.download(true); // 保存图片，参数为是否存储到相册
       },
     },
   };
@@ -442,14 +444,15 @@ const authFunc = async function() {
 
 ## <a id="method">插件 webarContext 实例方法说明</a>
 
-| 属性            | 类型                                                                                                        | 返回值 | 必填 | 说明                                                    |
-| :-------------- | :---------------------------------------------------------------------------------------------------------- | :----- | :--- | :------------------------------------------------------ |
-| pusherContext   | [LivePusherContext](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.html) | ""     | 否   | 插件中 live-pusher 实例，仅 webar-live-pusher 组件拥有  |
-| setBeautify     | function(beautyParam):void                                                                                  | ""     | 否   | 设置美颜                                                |
-| setFilter       | function(filterId, intensity):void                                                                          | null   | 否   | 设置滤镜                                                |
-| setEffect       | function([{ id, intensity }]):void                                                                          | null   | 否   | 设置特效（美妆、贴纸）                                  |
-| setBackground   | function({ type: 'image',src: arrayBuffer }):void                                                           | null   | 否   | 设置虚拟背景，仅 pusher 组件在开启 custom-effect 时生效 |
-| getCommonFilter | function():Promise\<Filter\>                                                                                | null   | 否   | 获取滤镜列表                                            |
-| getEffectList   | function():Promise\<Effect\>                                                                                | null   | 否   | 获取特效列表（美妆、贴纸）                              |
+| 属性            | 类型                                                                                                        | 返回值            | 必填 | 说明                                                                               |
+| :-------------- | :---------------------------------------------------------------------------------------------------------- | :---------------- | :--- | :--------------------------------------------------------------------------------- |
+| pusherContext   | [LivePusherContext](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.html) | ""                | 否   | 插件中 live-pusher 实例，仅 webar-live-pusher 组件拥有                             |
+| setBeautify     | function(beautyParam):void                                                                                  | ""                | 否   | 设置美颜                                                                           |
+| setFilter       | function(filterId, intensity):void                                                                          | null              | 否   | 设置滤镜                                                                           |
+| setEffect       | function([{ id, intensity }]):void                                                                          | null              | 否   | 设置特效（美妆、贴纸）                                                             |
+| setBackground   | function({ type: 'image',src: arrayBuffer }):void                                                           | null              | 否   | 设置虚拟背景，仅 pusher 组件在开启 custom-effect 时生效                            |
+| getCommonFilter | function()                                                                                                  | Promise\<Filter\> | 否   | 获取滤镜列表                                                                       |
+| getEffectList   | function()                                                                                                  | Promise\<Effect\> | 否   | 获取特效列表（美妆、贴纸）                                                         |
+| download        | function(isSave)                                                                                            | string            | 否   | 下载美颜图片 仅 image 组件有效，不传参数时仅返回图片缓存地址，传 true 则下载到相册 |
 
 更多方法请参考[腾讯特效-API 文档](https://cloud.tencent.com/document/product/616/75676#.E5.AF.B9.E8.B1.A1.E6.96.B9.E6.B3.95)
