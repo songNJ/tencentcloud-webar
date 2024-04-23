@@ -10,6 +10,8 @@
 
 ## 使用原生微信小程序接入
 
+本节仅适用于原生微信小程序项目接入，uniapp 项目请参见 [uniapp（小程序）接入](#uniapp)
+
 ### 接入配置
 
 1. 使用插件前需在小程序工程的`app.json`中声明要使用的插件，例如：
@@ -213,7 +215,7 @@ async onArCreated(event) {
 >
 > 1. webar-live-pusher 分为 美颜特效 和 虚拟背景，开启 enableVideoCustomRender 即为 美颜特效 模式，开启 custom-effect 即为 虚拟背景，两者不可同时使用。
 
-## 使用 uniapp 接入
+## <a id="uniapp">使用 uniapp 接入</a>
 
 ### 接入前配置
 
