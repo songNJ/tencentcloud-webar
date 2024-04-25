@@ -26,8 +26,7 @@ const EXPIRETIME = 604800;
  * 注意：该方案仅适用于调试Demo，正式上线前请将 UserSig 计算代码和密钥迁移到您的后台服务器上，以避免加密密钥泄露导致的流量盗用。
  * 文档：https://cloud.tencent.com/document/product/647/17275#Server
  */
-let SECRETKEY =
-  "f421afdec18117d9b9d2c9272e31216e4ced937bf8978d9c2c0f437d5197606c";
+let SECRETKEY = "";
 
 /*
  * Module:   GenerateTestUserSig
