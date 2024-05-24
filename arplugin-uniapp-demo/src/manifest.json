@@ -58,7 +58,7 @@
     "plugins": {
       "webarPlugin": {
         "provider": "wx04445cff065100ed",
-        "version": "1.0.4"
+        "version": "latest"
       }
     },
     "setting": {

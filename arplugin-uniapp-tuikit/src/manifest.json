@@ -52,7 +52,7 @@
   "mp-weixin": {
     "plugins": {
       "webarPlugin": {
-        "version": "dev-9235d0de658b7ad544f1f7a31d8fa4eb",
+        "version": "latest",
         "provider": "wx04445cff065100ed"
       }
     },
