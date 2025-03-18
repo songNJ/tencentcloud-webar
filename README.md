@@ -20,7 +20,7 @@
 {
   "plugins": {
     "webarPlugin": {
-      "version": "1.0.1",
+      "version": "latest",
       "provider": "wx04445cff065100ed"
     }
   }
@@ -227,7 +227,7 @@ async onArCreated(event) {
   "mp-weixin": {
     "plugins": {
       "webarPlugin": {
-        "version": "1.0.1",
+        "version": "latest",
         "provider": "wx04445cff065100ed"
       }
     }

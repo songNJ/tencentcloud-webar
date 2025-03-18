@@ -14,7 +14,7 @@
 {
 	"plugins": {
 		"webarPlugin": {
-			"version": "1.0.1",
+			"version": "latest",
 			"provider": "wx04445cff065100ed"
 		}
 	}
