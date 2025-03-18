@@ -11,6 +11,38 @@ Page({
 		makeupEnable: false,
 		stickerEnable: false,
 		effectState: [],
+		isRecord: false,
+	},
+	async takePhoto() {
+		// tempFilePath 仅插件版本大于1.0.14支持
+		const { uint8ArrayData, width, height, tempFilePath } = await this.sdk.takePhoto();
+		wx.previewImage({ urls: [tempFilePath] });
+		// 保存至相册
+		wx.saveImageToPhotosAlbum({
+			filePath: tempFilePath,
+		});
+	},
+	startRecord() {
+		this.setData({ isRecord: true });
+		this.sdk.startRecord().then(() => {
+			console.log('start success');
+		});
+	},
+	async stopRecord() {
+		this.setData({ isRecord: false });
+		// useOriginAudio 为 false 时不录制音频
+		const result = await this.sdk.stopRecord({ useOriginAudio: true });
+		const { tempFilePath } = result;
+
+		wx.saveVideoToPhotosAlbum({
+			filePath: tempFilePath,
+			success: (_) => {
+				console.log('save success');
+			},
+			fail: (error) => {
+				console.log(error);
+			},
+		});
 	},
 	onArCreated(event) {
 		this.sdk = event.detail;

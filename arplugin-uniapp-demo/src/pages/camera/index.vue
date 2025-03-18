@@ -9,6 +9,11 @@
       <button @click="stickerEnable = !stickerEnable">
         贴纸：{{ stickerEnable ? '开' : '关' }}
       </button>
+      <button @click="takePhoto">
+        拍照
+      </button>
+      <button v-if="!isRecord" @click="startRecord">开始录制</button>
+      <button v-else @click="stopRecord">停止录制</button>
     </view>
     <WebArCamera
       :licenseKey="licenseKey"
@@ -36,17 +41,51 @@ export default {
       licenseKey: LICENSE_KEY,
       appId: APP_ID,
       authFunc,
+      plugin3d,
       beautifyEnable: false,
       filterEnable: false,
       makeupEnable: false,
       stickerEnable: false,
       effectState: [],
+      isRecord: false,
     };
   },
   methods: {
     onArCreated(sdk) {
       this.sdk = sdk;
     },
+    async takePhoto(){
+      // tempFilePath 仅插件版本大于1.0.14支持
+      const { uint8ArrayData, width, height, tempFilePath } = await this.sdk.takePhoto();
+      wx.previewImage({ urls: [tempFilePath] });
+      // 保存至相册
+      wx.saveImageToPhotosAlbum({
+        filePath: tempFilePath,
+      });
+    },
+    startRecord() {
+      this.isRecord = true;
+      this.sdk.startRecord().then(()=>{
+        console.log('start success')
+      })
+    },
+    async stopRecord() {
+    this.isRecord = false;
+		// useOriginAudio 为 false 时不录制音频
+		const result = await this.sdk.stopRecord({ useOriginAudio: true });
+      const { tempFilePath } = result;
+
+      wx.saveVideoToPhotosAlbum({
+        filePath: tempFilePath,
+        success: (_) => {
+          console.log('save success')
+        },
+        fail: (error) => {
+          console.log(error);
+          
+        },
+      });
+    }
   },
   watch: {
     beautifyEnable: function (val) {
@@ -112,12 +151,17 @@ export default {
 .btn_box {
   position: fixed;
   display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
   width: 100vw;
   bottom: 10%;
-  justify-content: space-between;
+  justify-content: flex-start;
   z-index: 9999;
 }
 .btn_box button {
-  font-size: 30rpx;
+  width: 300rpx;
+	font-size: 30rpx;
+  margin-left: 15px;
+	margin-right: 15px;
 }
 </style>

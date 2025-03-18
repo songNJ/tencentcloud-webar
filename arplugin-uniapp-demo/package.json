@@ -71,7 +71,7 @@
     "core-js": "^3.8.3",
     "crypto-js": "^4.2.0",
     "flyio": "^0.6.2",
-    "tencentcloud-webar-wx": "^1.0.1",
+    "tencentcloud-webar-wx": "latest",
     "vue": ">= 2.6.14 < 2.7",
     "vuex": "^3.2.0"
   },
